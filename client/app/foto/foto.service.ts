@@ -21,4 +21,8 @@ export class FotoService {
     lista(): Observable<FotoComponent[]>{
         return  this.http.get(this.url).map(resposta => resposta.json());
     }
+
+    remover(foto:FotoComponent):Observable<Response>{
+        return this.http.delete(this.url + "/"+ foto._id);
+    }
 }
