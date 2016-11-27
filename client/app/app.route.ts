@@ -7,6 +7,7 @@ const appRoutes:Routes = [
 
     {path:'', component:ListagemComponent},
     {path:'cadastro', component:CadastroComponent},
+    {path:'cadastro/:id', component:CadastroComponent},
     //** significa qualquer coisa que não foi definido no appRoutes
     {path:'**', component:ListagemComponent}
 ];
