@@ -1,0 +1,11 @@
+.efeito:hover{
+    -moz-transition: all 0.5s;
+    -moz-transform: scale(1.15);
+    transition: all 0.5s;
+    transform: scale(1.15);
+}
+
+.efeito {
+    transition: all 1s;
+    -moz-transition: all 1s;
+}
