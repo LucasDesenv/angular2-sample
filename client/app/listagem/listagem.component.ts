@@ -1,6 +1,7 @@
 import {Component,Inject} from '@angular/core';
 import {FotoService} from '../foto/foto.service';
 import {FotoComponent}from '../foto/foto.component';
+import {PainelComponent} from '../painel/painel.component';
 
 @Component({
     moduleId:module.id,
@@ -27,16 +28,18 @@ export class ListagemComponent{
             }, erro => console.log(erro));
     }
 
-    remover(foto:FotoComponent){
+    remover(foto:FotoComponent, painel:PainelComponent){
         this.service.remover(foto)
         .subscribe(
             ()=>{
-                let novasFotos = this.fotos.slice(0);
-                let index = novasFotos.indexOf(foto);
-                novasFotos.splice(index,1);
-                //O change detection do Angular2 só entra em ação quando a referência do atributo muda.
-                this.fotos = novasFotos;
-                this.mensagem="Foto removida com sucesso";
+                painel.fadeOut(() => {
+                    let novasFotos = this.fotos.slice(0);
+                    let index = novasFotos.indexOf(foto);
+                    novasFotos.splice(index,1);
+                    //O change detection do Angular2 só entra em ação quando a referência do atributo muda.
+                    this.fotos = novasFotos;
+                    this.mensagem="Foto removida com sucesso";
+                });
             },
             erro => { 
                 console.log(erro);

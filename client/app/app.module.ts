@@ -11,10 +11,11 @@ import {CadastroComponent} from './cadastro/cadastro.component';
 import { ListagemComponent } from './listagem/listagem.component';
 import {routing} from './app.route'
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'
+import {BotaoModule} from './botao/botao.module';
 //Essa anotação em TS transforma meu modulo em um modulo do Angular (fantástico!).
 @NgModule({
     //Qual módulo vou utilizar. No nosso caso, é o BrowserModule.
-    imports : [BrowserModule, FotoModule, HttpModule, PainelModule,routing, FormsModule, ReactiveFormsModule],
+    imports : [BrowserModule, FotoModule, HttpModule, PainelModule,routing, FormsModule, ReactiveFormsModule,BotaoModule],
     //Quais componentes vou usar
     declarations : [AppComponent, CadastroComponent, ListagemComponent],
     //Qual declarations eu quero iniciar primeiro? No nosso caso, queremos que o AppComponent seja iniciado primeiro.
